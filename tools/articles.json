@@ -21,7 +21,6 @@
       "page_offset": 2
     }
   ],
-
   "articles": [
     {
       "slug": "ai-against-modern-slavery",
@@ -29,10 +28,13 @@
       "section": "Featured article",
       "title": "AI against modern slavery (AIMS)",
       "subtitle": "Building an open foundation for assessing corporate accountability at scale",
-      "pages": "2\u20137",
-      "start_page": 2,
+      "pages": "3–8",
+      "start_page": 3,
       "authors": [
-        {"name": "Adriana Eufrosina Bora", "affil": "Mila, Quebec Artificial Intelligence Institute, and Queensland University of Technology"}
+        {
+          "name": "Adriana Eufrosina Bora",
+          "affil": "Mila, Quebec Artificial Intelligence Institute, and Queensland University of Technology"
+        }
       ],
       "summary": "Around 50 million people live in modern slavery, most of them exploited inside private-sector supply chains. Modern Slavery Acts in the United Kingdom, Australia and Canada oblige thousands of companies to disclose their countermeasures each year, yet almost none of those statements are ever read at scale. Project AIMS builds the open research foundation that scalable assessment would need: the largest annotated dataset of modern slavery statements, fine-tuned language models, explainable cross-jurisdictional review, distillation for low-resource deployment, and a quality-assessment framework that reaches beyond bare legal compliance.",
       "points": [
@@ -51,24 +53,69 @@
       "section": "Featured article",
       "title": "Beyond the data",
       "subtitle": "How community-engaged statistics and data science transforms research on social issues",
-      "pages": "8\u201312",
-      "start_page": 8,
+      "pages": "9–13",
+      "start_page": 9,
       "authors": [
-        {"name": "Claire Kelling", "affil": "Carleton College"},
-        {"name": "Laurie Baker", "affil": "Bates College"},
-        {"name": "Paige Bilich", "affil": "Bates College"},
-        {"name": "Carrie Diaz Eaton", "affil": "Bates College and RIOS Institute"},
-        {"name": "Tyler George", "affil": "Cornell College"},
-        {"name": "Morgan Kinney", "affil": "Bates College"},
-        {"name": "Jenny Mercado", "affil": "Woonasquatucket River Watershed Council"},
-        {"name": "Mary Parker", "affil": "The People's Kitchen of San Luis Obispo"},
-        {"name": "Emma Pederson", "affil": "The Reinvestigation Workgroup"},
-        {"name": "Angie Reed", "affil": "Penobscot Nation"},
-        {"name": "Emily Robinson", "affil": "Cal Poly, San Luis Obispo"},
-        {"name": "Anamika Sen", "affil": "Bates College"},
-        {"name": "Emily Seru", "affil": "Carleton College"},
-        {"name": "Carrie Slagle", "affil": "Waypoint Services"},
-        {"name": "Kai Zhang", "affil": "Cornell University"}
+        {
+          "name": "Claire Kelling",
+          "affil": "Carleton College"
+        },
+        {
+          "name": "Laurie Baker",
+          "affil": "Bates College"
+        },
+        {
+          "name": "Paige Bilich",
+          "affil": "Bates College"
+        },
+        {
+          "name": "Carrie Diaz Eaton",
+          "affil": "Bates College and RIOS Institute"
+        },
+        {
+          "name": "Tyler George",
+          "affil": "Cornell College"
+        },
+        {
+          "name": "Morgan Kinney",
+          "affil": "Bates College"
+        },
+        {
+          "name": "Jenny Mercado",
+          "affil": "Woonasquatucket River Watershed Council"
+        },
+        {
+          "name": "Mary Parker",
+          "affil": "The People's Kitchen of San Luis Obispo"
+        },
+        {
+          "name": "Emma Pederson",
+          "affil": "The Reinvestigation Workgroup"
+        },
+        {
+          "name": "Angie Reed",
+          "affil": "Penobscot Nation"
+        },
+        {
+          "name": "Emily Robinson",
+          "affil": "Cal Poly, San Luis Obispo"
+        },
+        {
+          "name": "Anamika Sen",
+          "affil": "Bates College"
+        },
+        {
+          "name": "Emily Seru",
+          "affil": "Carleton College"
+        },
+        {
+          "name": "Carrie Slagle",
+          "affil": "Waypoint Services"
+        },
+        {
+          "name": "Kai Zhang",
+          "affil": "Cornell University"
+        }
       ],
       "summary": "Communities most affected by inequality are often excluded from, or exploited by, the research that describes them. Community-engaged research puts community members inside the research process throughout, and the authors argue this improves both the process and the products of statistics and data science on questions of social justice. Written by community members, students, community-engagement staff and faculty together, the article gathers all four perspectives on why engagement matters and how to approach it.",
       "points": [
@@ -86,13 +133,25 @@
       "section": "Featured article",
       "title": "Using secondary data to engage learners in researching social issues",
       "subtitle": "The case of the CR2 Climate Explorer and water scarcity",
-      "pages": "13\u201317",
-      "start_page": 13,
+      "pages": "14–18",
+      "start_page": 14,
       "authors": [
-        {"name": "Francisca Ubilla", "affil": "Universidad Aut\u00f3noma de Barcelona"},
-        {"name": "Valentina Giaconi", "affil": "Universidad de O'Higgins"},
-        {"name": "Ra\u00fal Valenzuela", "affil": "Universidad de O'Higgins"},
-        {"name": "Felipe Ruz", "affil": "Universidad de Granada"}
+        {
+          "name": "Francisca Ubilla",
+          "affil": "Pontificia Universidad Católica de Chile"
+        },
+        {
+          "name": "Valentina Giaconi",
+          "affil": "Universidad de O'Higgins"
+        },
+        {
+          "name": "Raúl Valenzuela",
+          "affil": "Universidad de O'Higgins"
+        },
+        {
+          "name": "Felipe Ruz",
+          "affil": "Pontificia Universidad Católica de Valparaíso"
+        }
       ],
       "summary": "Drought and water scarcity are routinely confused, yet they have different causes: drought has a natural origin, while water scarcity follows from how water is used. Working with open data from Chile's CR2 Climate Explorer, the authors show how learners can tell the two apart for themselves, following the statistical research process from question to communication using streamflow and precipitation records for Petorca.",
       "points": [
@@ -110,15 +169,21 @@
       "section": "Teaching",
       "title": "The International Statistical Literacy Project",
       "subtitle": "Putting the focus on statistical literacy",
-      "pages": "18\u201321",
-      "start_page": 18,
+      "pages": "19–22",
+      "start_page": 19,
       "authors": [
-        {"name": "Reija Helenius", "affil": "ISLP Director, Statistics Finland"},
-        {"name": "Elisa Falck", "affil": "ISLP Project Coordinator"}
+        {
+          "name": "Reija Helenius",
+          "affil": "ISLP Director, Statistics Finland"
+        },
+        {
+          "name": "Elisa Falck",
+          "affil": "ISLP Project Coordinator"
+        }
       ],
       "summary": "Statistical literacy is the ability to understand, interpret and critically evaluate data in everyday life, and it now has to contend with information generated by AI systems. The ISLP, a non-profit project operating within the ISI and the IASE, has spent three decades building a worldwide network to promote it. This article traces the project's history from the 1994 World Numeracy Programme to a network of 184 country coordinators in 97 countries, and sets out its activities, its funding difficulties and its plans.",
       "points": [
-        "The International Poster Competition: 22,878 participants from 36 countries in 2024\u20132025, across four age categories.",
+        "The International Poster Competition: 22,878 participants from 36 countries in 2024–2025, across four age categories.",
         "The Best Cooperative Award and the International Day of Statistical Literacy, next held on 17 November 2026.",
         "Challenges: language barriers, unequal access to statistical education, and the absence of sustained core funding.",
         "How to get involved, whether or not your country already has a coordinator."
@@ -132,10 +197,13 @@
       "section": "Official statistics",
       "title": "Why some countries measure race, and others refuse",
       "subtitle": "On classification, mismeasurement and the limits of what should be counted",
-      "pages": "22\u201324",
-      "start_page": 22,
+      "pages": "23–25",
+      "start_page": 23,
       "authors": [
-        {"name": "Jonathan Auerbach", "affil": "George Mason University"}
+        {
+          "name": "Jonathan Auerbach",
+          "affil": "George Mason University"
+        }
       ],
       "summary": "Official statistics on race and ethnicity are required by law in some countries and explicitly prohibited in others, and both positions are defended in the name of social justice and human rights. Tracing racial classification from Linnaeus and Blumenbach through the rise and fall of scientific racism, this column argues that the disagreement is not only political but statistical: official measurement often illuminates injustice, while mismeasurement reinforces it.",
       "points": [
@@ -153,13 +221,19 @@
       "section": "Interview",
       "title": "An interview with Tony Labillois",
       "subtitle": "On official statistics, accessibility, and the responsibility of data",
-      "pages": "25\u201328",
-      "start_page": 25,
+      "pages": "26–29",
+      "start_page": 26,
       "authors": [
-        {"name": "Tony Labillois", "affil": "Director General, Statistics Canada (ret. 2024)"},
-        {"name": "Interviewed by Manuele Leonelli", "affil": "Editor-in-Chief, vISIon"}
+        {
+          "name": "Tony Labillois",
+          "affil": "Director General, Statistics Canada (ret. 2024)"
+        },
+        {
+          "name": "Interviewed by Manuele Leonelli",
+          "affil": "Editor-in-Chief, vISIon"
+        }
       ],
-      "summary": "Tony Labillois spent more than 35 years in official statistics, rising from methodologist to Director General at Statistics Canada, co-leading the Disaggregated Data Action Plan and serving for over two decades as Champion for Persons with Disabilities. Born with low vision in a village in the Gasp\u00e9sie, he was told by a university professor that he had no place in statistics. In this conversation he traces the path from that classroom to the United Nations Human Rights Council, and explains what it actually takes for data to be accessible.",
+      "summary": "Tony Labillois spent more than 35 years in official statistics, rising from methodologist to Director General at Statistics Canada, co-leading the Disaggregated Data Action Plan and serving for over two decades as Champion for Persons with Disabilities. Born with low vision in a village in the Gaspésie, he was told by a university professor that he had no place in statistics. In this conversation he traces the path from that classroom to the United Nations Human Rights Council, and explains what it actually takes for data to be accessible.",
       "points": [
         "Two meanings of accessible data: data that anyone can find, understand and use, and data about accessibility itself.",
         "The softwood lumber dispute, and what happened when the lawyers could not read the tables.",
@@ -169,19 +243,90 @@
       "quote": "Official statistics turn data into understanding, and understanding into action for the public good.",
       "keywords": "official statistics, accessibility, disability, Statistics Canada, disaggregated data"
     },
-
+    {
+      "slug": "computational-workflows-human-rights-archives",
+      "issue": "vol1-no2",
+      "section": "Software",
+      "title": "Building computational workflows for human rights archives",
+      "subtitle": "Design decisions under data sensitivity constraints",
+      "pages": "30–34",
+      "start_page": 30,
+      "authors": [
+        {
+          "name": "Elina Gómez",
+          "affil": "Instituto de Investigación en Justicia Social y Desigualdades, Universidad de la República"
+        },
+        {
+          "name": "Lorena Etcheverry",
+          "affil": "Instituto de Computación, Facultad de Ingeniería, Universidad de la República"
+        },
+        {
+          "name": "Jocelyn Dunstan",
+          "affil": "Pontificia Universidad Católica de Chile"
+        }
+      ],
+      "summary": "Software built for human rights archives faces a design paradox that is rarely discussed in the literature: the data that drives its development cannot be made public. Drawing on two ongoing academic projects, Memorias in Uruguay and NuestraMemorIA in Chile, the authors describe a two-layer architecture for applying natural language processing to declassified military and government archives from the Southern Cone dictatorships of the 1970s, and set out the methodological decisions that data sensitivity imposes at every step.",
+      "points": [
+        "Layer one, document recovery: optical character recognition on mimeographed, hand-annotated and badly degraded pages, followed by named entity recognition and information extraction.",
+        "Local inference as a legal and ethical requirement rather than a cost decision, and sovereign retrieval as the principle that governs every infrastructure choice that follows from it.",
+        "Layer two, search and aggregate analysis: LUZ and Amalia in the Uruguayan project, a knowledge-graph chatbot grounded in explicit graph evidence in the Chilean one.",
+        "The evaluation problem when neither documents nor annotations can be released: synthetic corpora, public subsets read as upper bounds, and validation by historians and archivists in the loop.",
+        "A worked example, from a keyword search through table extraction on a detention list to a partial detention trajectory recovered by record linkage.",
+        "Sensitivity treated as a spectrum rather than a binary, with access control at document level and not at collection level."
+      ],
+      "quote": "At every step, decisions on access, storage, and inference become ethical choices.",
+      "keywords": "human rights archives, transitional justice, OCR, named entity recognition, knowledge graphs, retrieval-augmented generation, data sensitivity, Uruguay, Chile"
+    },
+    {
+      "slug": "beneath-the-surface",
+      "issue": "vol1-no2",
+      "section": "Country spotlight",
+      "title": "Beneath the surface",
+      "subtitle": "What data reveal about climate pressure on Indonesian fisheries",
+      "pages": "35–37",
+      "start_page": 35,
+      "authors": [
+        {
+          "name": "Suryo Adi Rakhmawan",
+          "affil": "BPS, Statistics Indonesia"
+        },
+        {
+          "name": "I Nyoman Setiawan",
+          "affil": "BPS, Statistics Indonesia"
+        }
+      ],
+      "summary": "Indonesia's fisheries are usually described through production, exports and the number of people working at sea. Beneath those figures lies a more fragile story: a warming, less predictable ocean, and with it the livelihoods of coastal workers and fishing communities. Combining official statistics, vessel activity and environmental and geospatial indicators, the authors trace the pathway from climate signal to household vulnerability, and argue that official statistics need to move beyond separate datasets toward evidence systems that connect environmental change with people's lives.",
+      "points": [
+        "Sea surface temperature, salinity and chlorophyll-a mapped across Indonesian waters for 2004, 2014 and 2024, showing that climate pressure is spatially uneven.",
+        "A clear decline in fisheries potential over those twenty years, with sea temperatures projected to rise by roughly 0.10 to 0.28 degrees within the next two to three decades.",
+        "Two high-risk Fisheries Management Areas: the Arafura Sea, environmentally vulnerable and intensively fished, and the Java Sea, socio-economically vulnerable because small-scale fisheries dominate.",
+        "Why one dataset is not enough, and what labour statistics, household surveys, vessel activity, remote sensing and geospatial layers each contribute that the others cannot.",
+        "The case for official statistics as an anticipatory instrument: identifying who is becoming vulnerable, not only recording what has already happened."
+      ],
+      "quote": "Who becomes vulnerable when the sea changes?",
+      "keywords": "Indonesia, fisheries, climate change, official statistics, geospatial data, remote sensing, vulnerability, coastal livelihoods"
+    },
     {
       "slug": "beyond-the-smoke",
       "issue": "vol1-no1",
       "section": "Featured article",
       "title": "Beyond the smoke",
       "subtitle": "What statistics reveal about Brazilian wildfires",
-      "pages": "3\u20136",
+      "pages": "3–6",
       "start_page": 3,
       "authors": [
-        {"name": "Jonatha Pimentel", "affil": "Federal University of Pernambuco"},
-        {"name": "Rodrigo Bulh\u00f5es", "affil": "Federal University of Bahia"},
-        {"name": "Paulo Canas Rodrigues", "affil": "Federal University of Bahia"}
+        {
+          "name": "Jonatha Pimentel",
+          "affil": "Federal University of Pernambuco"
+        },
+        {
+          "name": "Rodrigo Bulhões",
+          "affil": "Federal University of Bahia"
+        },
+        {
+          "name": "Paulo Canas Rodrigues",
+          "affil": "Federal University of Bahia"
+        }
       ],
       "summary": "Brazil is home to six major biomes and to one of the most biodiverse territories on the planet, and it has seen a worrying rise in fire activity over the past decade. Using satellite detections of more than three million fire spots recorded between 2010 and 2024, the authors trace the temporal and geographical patterns of wildfire across the country, and argue for sustained monitoring and policies that connect local realities to global climate action.",
       "points": [
@@ -199,12 +344,21 @@
       "section": "Featured article",
       "title": "From metrics to meaning",
       "subtitle": "Environmetrics and the Sustainable Development Goals",
-      "pages": "7\u201310",
+      "pages": "7–10",
       "start_page": 7,
       "authors": [
-        {"name": "Nathaniel K. Newlands", "affil": "Agriculture and Agri-Food Canada, and University of Victoria"},
-        {"name": "Marco Costa", "affil": "University of Aveiro"},
-        {"name": "Stefano Castruccio", "affil": "University of Notre Dame"}
+        {
+          "name": "Nathaniel K. Newlands",
+          "affil": "Agriculture and Agri-Food Canada, and University of Victoria"
+        },
+        {
+          "name": "Marco Costa",
+          "affil": "University of Aveiro"
+        },
+        {
+          "name": "Stefano Castruccio",
+          "affil": "University of Notre Dame"
+        }
       ],
       "summary": "Progress on the Sustainable Development Goals is polarised, with wide disparities between the trajectories the metrics record and the capacity-building that would give those metrics meaning. Environmetrics spans disciplines, institutions and societies, and is unusually well placed to address that gap. The authors set out the history and mission of The International Environmetrics Society, and where its work needs to go next.",
       "points": [
@@ -222,16 +376,19 @@
       "section": "Featured article",
       "title": "Statistical analysis of record-breaking temperatures",
       "subtitle": "Is there evidence of climate change?",
-      "pages": "11\u201314",
+      "pages": "11–14",
       "start_page": 11,
       "authors": [
-        {"name": "Ana C. Cebri\u00e1n", "affil": "University of Zaragoza"}
+        {
+          "name": "Ana C. Cebrián",
+          "affil": "University of Zaragoza"
+        }
       ],
       "summary": "Climate change is usually communicated through averages, but the extremes are what leave the deepest marks on societies and ecosystems. Record-breaking events offer a simpler, more communicative and statistically robust way to evaluate deviations from a stationary climate, because the probability of a record in an independent identically distributed series is known exactly and does not depend on the underlying distribution. This article reviews the hypothesis tests that follow, and applies them to forty Spanish temperature series.",
       "points": [
         "Under stationarity the probability of a record at time t is exactly 1/t, whatever the distribution.",
         "Combining four types of record, forward and backward, upper and lower, to build more powerful tests.",
-        "Daily maxima from 40 Spanish stations, 1960 to 2021, with Benjamini\u2013Yekutieli adjustment for multiplicity.",
+        "Daily maxima from 40 Spanish stations, 1960 to 2021, with Benjamini–Yekutieli adjustment for multiplicity.",
         "The effect of warming is neither spatially uniform nor homogeneous across the year: summer is the most affected season."
       ],
       "quote": "The accelerated pace of record-breaking events underscores the urgency of implementing both mitigation and adaptation strategies.",
@@ -242,12 +399,18 @@
       "issue": "vol1-no1",
       "section": "Teaching",
       "title": "Have humans caused the current climate crisis?",
-      "subtitle": "Investigating CO\u2082 data throughout the Earth's history",
-      "pages": "15\u201318",
+      "subtitle": "Investigating CO₂ data throughout the Earth's history",
+      "pages": "15–18",
       "start_page": 15,
       "authors": [
-        {"name": "Joachim Engel", "affil": "Ludwigsburg University of Education"},
-        {"name": "Laura Martignon", "affil": "Ludwigsburg University of Education"}
+        {
+          "name": "Joachim Engel",
+          "affil": "Ludwigsburg University of Education"
+        },
+        {
+          "name": "Laura Martignon",
+          "affil": "Ludwigsburg University of Education"
+        }
       ],
       "summary": "The Earth has always cycled through ice ages and warm periods, so is today's rapid warming part of that pattern or something new? The authors show how students can settle the question themselves, using the Vostok ice core and Mauna Loa records in the freely available CODAP software. Bringing the two datasets together produces the decisive picture, and with it a lesson in why reliable data and the institutions that provide them matter.",
       "points": [
@@ -265,10 +428,13 @@
       "section": "Software",
       "title": "metR: analysis and visualisation of meteorological fields",
       "subtitle": "Bringing atmospheric science into the tidy R workflow",
-      "pages": "19\u201320",
+      "pages": "19–20",
       "start_page": 19,
       "authors": [
-        {"name": "Elio Campitelli", "affil": "Monash University and Securing Antarctica's Environmental Future"}
+        {
+          "name": "Elio Campitelli",
+          "affil": "Monash University and Securing Antarctica's Environmental Future"
+        }
       ],
       "summary": "Meteorological analysis needs specialised tools, but domain-specific data structures isolate the work from the wider statistical software community. metR bridges that gap, reading meteorological data as tidy data frames and extending ggplot2 with the geoms, stats and scales that atmospheric science actually requires.",
       "points": [
@@ -278,7 +444,7 @@
         "A worked example computing the Southern Annular Mode in eighteen lines."
       ],
       "quote": "The package bridges the gap between domain-specific meteorological tools and the broader R data science ecosystem.",
-      "keywords": "R, metR, ggplot2, meteorology, NetCDF, visualisation"
+      "keywords": "R, R package, metR, ggplot2, meteorology, NetCDF, visualisation"
     },
     {
       "slug": "spichanges-r-package",
@@ -286,13 +452,25 @@
       "section": "Software",
       "title": "Using the SPIChanges R package at the heart of the Amazon rainforest",
       "subtitle": "Reading the Standardized Precipitation Index under a changing climate",
-      "pages": "21\u201322",
+      "pages": "21–22",
       "start_page": 21,
       "authors": [
-        {"name": "Gabriel Constantino Blain", "affil": "Agronomic Institute of Campinas"},
-        {"name": "Adam H. Sparks", "affil": "Curtin University"},
-        {"name": "Graciela da Rocha Sobierajski", "affil": "Agronomic Institute of Campinas"},
-        {"name": "Let\u00edcia Lopes Martins", "affil": "Agronomic Institute of Campinas"}
+        {
+          "name": "Gabriel Constantino Blain",
+          "affil": "Agronomic Institute of Campinas"
+        },
+        {
+          "name": "Adam H. Sparks",
+          "affil": "Curtin University"
+        },
+        {
+          "name": "Graciela da Rocha Sobierajski",
+          "affil": "Agronomic Institute of Campinas"
+        },
+        {
+          "name": "Letícia Lopes Martins",
+          "affil": "Agronomic Institute of Campinas"
+        }
       ],
       "summary": "The Standardized Precipitation Index assumes a stationary climate, which is exactly the assumption a changing climate breaks. SPIChanges compares the cumulative probability of an observed rainfall amount under stationary and non-stationary versions of the same gamma distribution, and so quantifies how drought frequency itself has shifted. The authors apply it to 25 years of daily rainfall at Manaus.",
       "points": [
@@ -310,10 +488,13 @@
       "section": "Official statistics",
       "title": "The overlooked science of understanding the world: demography",
       "subtitle": "What population data can explain that other tools cannot",
-      "pages": "23\u201324",
+      "pages": "23–24",
       "start_page": 23,
       "authors": [
-        {"name": "Luca Di Gennaro Splendore", "affil": "University of Malta"}
+        {
+          "name": "Luca Di Gennaro Splendore",
+          "affil": "University of Malta"
+        }
       ],
       "summary": "Can demography explain China's growth and its recent slowdown? The struggles of African economies? The politics of the Middle East? Numerous socio-economic phenomena can be analysed and predicted through demographic study, yet the array of tools most commentators reach for rarely incorporates this perspective.",
       "points": [
@@ -331,12 +512,21 @@
       "section": "Country spotlight",
       "title": "Philippines",
       "subtitle": "Mapping optimism in the pearl of the orient seas",
-      "pages": "25\u201327",
+      "pages": "25–27",
       "start_page": 25,
       "authors": [
-        {"name": "Leonard Allan F. Almero", "affil": "University of the Philippines Los Ba\u00f1os"},
-        {"name": "Marie Joy L. Relente", "affil": "University of the Philippines Los Ba\u00f1os"},
-        {"name": "Mara Sherlin DP. Talento", "affil": "KAUST"}
+        {
+          "name": "Leonard Allan F. Almero",
+          "affil": "University of the Philippines Los Baños"
+        },
+        {
+          "name": "Marie Joy L. Relente",
+          "affil": "University of the Philippines Los Baños"
+        },
+        {
+          "name": "Mara Sherlin DP. Talento",
+          "affil": "KAUST"
+        }
       ],
       "summary": "The Philippines is known for its natural beauty and cultural richness, but equally noteworthy is the optimism of its people. Working with the OCTA Research Group's nationwide Tugon ng Masa survey, the authors visualise and analyse that optimism, and along the way demystify how simple survey responses become a statistical index.",
       "points": [

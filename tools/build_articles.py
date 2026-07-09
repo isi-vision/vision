@@ -5,12 +5,17 @@ Build the article landing pages for the vISIon website.
 Usage:  python3 tools/build_articles.py
 
 Reads tools/articles.json and writes:
-    articles/<slug>.html      one landing page per article
-    articles/index.html       an index of every article, newest issue first
+    articles/<slug>.html      one landing page per published article
+    articles/index.html       searchable index of everything, newest first
+
+Articles marked  "draft": true  are listed on the index (so the issue's
+contents look complete) but get no landing page, and their entry links
+straight into the PDF instead. Fill in authors, summary and points, remove
+the draft flag, and re-run this script to publish the page.
 
 The generated files are committed to the repository. GitHub Pages serves them
-directly: this script is a convenience for the editors, not a build step that
-the site depends on. Re-run it after editing articles.json, then commit.
+directly: this script is a convenience for the editors, not a build step the
+site depends on.
 """
 
 import json
@@ -27,13 +32,18 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,700'
          '&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">')
 
-
-def esc(text):
-    return html.escape(str(text), quote=False)
+LATEST_PDF = ""
 
 
-def header(current, latest_pdf):
-    """Site header. `current` marks the active nav item."""
+def esc(t):
+    return html.escape(str(t), quote=False)
+
+
+def attr(t):
+    return html.escape(str(t), quote=True)
+
+
+def header(current):
     items = [
         ("../index.html", "Home", "home"),
         ("../issues.html", "Issues", "issues"),
@@ -43,9 +53,8 @@ def header(current, latest_pdf):
         ("../about.html", "About", "about"),
     ]
     links = "\n      ".join(
-        '<a href="{}"{}>{}</a>'.format(
-            href, ' aria-current="page"' if key == current else "", label)
-        for href, label, key in items)
+        '<a href="{}"{}>{}</a>'.format(h, ' aria-current="page"' if k == current else "", l)
+        for h, l, k in items)
     return f"""<header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="../index.html">
@@ -57,7 +66,7 @@ def header(current, latest_pdf):
     </button>
     <nav class="site-nav" id="site-nav">
       {links}
-      <a class="btn btn-orange btn-sm nav-cta" href="../issues/{latest_pdf}">Read the latest issue</a>
+      <a class="btn btn-orange btn-sm nav-cta" href="../issues/{LATEST_PDF}">Read the latest issue</a>
     </nav>
   </div>
 </header>"""
@@ -101,6 +110,8 @@ FOOTER = """<footer class="site-footer">
 
 def author_line(authors):
     names = [a["name"] for a in authors]
+    if not names:
+        return ""
     if len(names) == 1:
         return names[0]
     if len(names) == 2:
@@ -110,17 +121,16 @@ def author_line(authors):
     return ", ".join(names[:-1]) + " and " + names[-1]
 
 
-def article_page(art, issue, prev_art, next_art):
-    pdf_page = art["start_page"] + issue["page_offset"]
-    pdf_link = "../issues/{}#page={}".format(issue["pdf"], pdf_page)
+def pdf_link(art, issue, prefix="../"):
+    return "{}issues/{}#page={}".format(prefix, issue["pdf"], art["start_page"] + issue["page_offset"])
 
+
+def article_page(art, issue, prev_art, next_art):
     authors_html = "\n        ".join(
         '<div class="author"><p class="name">{}</p><p class="affil">{}</p></div>'.format(
-            esc(a["name"]), esc(a["affil"]))
-        for a in art["authors"])
+            esc(a["name"]), esc(a["affil"])) for a in art["authors"])
 
-    points_html = "\n        ".join(
-        "<li>{}</li>".format(esc(p)) for p in art["points"])
+    points_html = "\n        ".join("<li>{}</li>".format(esc(p)) for p in art["points"])
 
     quote_html = ""
     if art.get("quote"):
@@ -129,15 +139,15 @@ def article_page(art, issue, prev_art, next_art):
 
     pager = []
     if prev_art:
-        pager.append('<a class="pager-link prev" href="{}.html"><span>Previous in this issue</span><strong>{}</strong></a>'
-                     .format(prev_art["slug"], esc(prev_art["title"])))
+        pager.append('<a class="pager-link prev" href="{}.html"><span>Previous in this issue</span>'
+                     '<strong>{}</strong></a>'.format(prev_art["slug"], esc(prev_art["title"])))
     else:
-        pager.append('<span></span>')
+        pager.append("<span></span>")
     if next_art:
-        pager.append('<a class="pager-link next" href="{}.html"><span>Next in this issue</span><strong>{}</strong></a>'
-                     .format(next_art["slug"], esc(next_art["title"])))
+        pager.append('<a class="pager-link next" href="{}.html"><span>Next in this issue</span>'
+                     '<strong>{}</strong></a>'.format(next_art["slug"], esc(next_art["title"])))
     else:
-        pager.append('<span></span>')
+        pager.append("<span></span>")
 
     citation = "{}. \u201c{}.\u201d vISIon: The ISI Magazine {}, {}, pp. {}.".format(
         author_line(art["authors"]), art["title"], issue["volume"], issue["date"], art["pages"])
@@ -164,19 +174,19 @@ def article_page(art, issue, prev_art, next_art):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(art['title'])} &middot; vISIon: The ISI Magazine</title>
-<meta name="description" content="{html.escape(desc, quote=True)}">
-<meta name="keywords" content="{html.escape(art['keywords'], quote=True)}">
+<meta name="description" content="{attr(desc)}">
+<meta name="keywords" content="{attr(art['keywords'])}">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 {FONTS}
 <link rel="stylesheet" href="../css/style.css">
-<meta property="og:title" content="{html.escape(art['title'], quote=True)}">
-<meta property="og:description" content="{html.escape(desc, quote=True)}">
+<meta property="og:title" content="{attr(art['title'])}">
+<meta property="og:description" content="{attr(desc)}">
 <meta property="og:type" content="article">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>
 
-{header('articles', ISSUE_LATEST_PDF)}
+{header('articles')}
 
 <main>
 
@@ -213,7 +223,7 @@ def article_page(art, issue, prev_art, next_art):
             <p class="kicker" style="margin-bottom:.3rem">Read the article</p>
             <p style="margin:0">Pages {esc(art['pages'])} of {esc(issue['volume'])}, {esc(issue['date'])}. Free to read, no registration.</p>
           </div>
-          <a class="btn btn-orange" href="{pdf_link}">Open at page {art['start_page']}</a>
+          <a class="btn btn-orange" href="{pdf_link(art, issue)}">Open at page {art['start_page']}</a>
         </div>
 
         <h2>How to cite</h2>
@@ -242,35 +252,129 @@ def article_page(art, issue, prev_art, next_art):
 {FOOTER}"""
 
 
-def index_page(issues, by_issue):
-    blocks = []
-    for issue in issues:
-        arts = by_issue[issue["id"]]
-        rows = "\n".join(
-            f"""        <li class="index-row">
-          <a href="{a['slug']}.html">
-            <p class="index-section">{esc(a['section'])} &middot; pp. {esc(a['pages'])}</p>
+INDEX_JS = """
+(function () {
+  'use strict';
+  var search  = document.getElementById('article-search');
+  var rows    = Array.prototype.slice.call(document.querySelectorAll('.index-row'));
+  var chips   = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var count   = document.getElementById('result-count');
+  var empty   = document.getElementById('no-results');
+  var showAll = document.getElementById('show-all');
+  var INITIAL = 6;
+  var expanded = false;
+
+  var filters = { issue: 'all', section: 'all' };
+
+  // Deep link from the issues page, e.g. articles/index.html?issue=vol1-no2
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('issue')) { filters.issue = params.get('issue'); }
+  if (params.get('q') && search) { search.value = params.get('q'); }
+
+  function matches(row, needle) {
+    if (filters.issue !== 'all' && row.dataset.issue !== filters.issue) return false;
+    if (filters.section !== 'all' && row.dataset.section !== filters.section) return false;
+    if (!needle) return true;
+    return row.dataset.search.indexOf(needle) !== -1;
+  }
+
+  function apply() {
+    var needle = (search ? search.value : '').trim().toLowerCase();
+    var browsing = !needle && filters.issue === 'all' && filters.section === 'all' && !expanded;
+    var shown = 0, total = 0;
+
+    rows.forEach(function (row) {
+      var hit = matches(row, needle);
+      if (hit) total++;
+      var visible = hit && (!browsing || total <= INITIAL);
+      row.classList.toggle('is-hidden', !visible);
+      if (visible) shown++;
+    });
+
+    if (count) {
+      count.textContent = total === 0
+        ? 'No articles match.'
+        : (shown < total ? 'Showing ' + shown + ' of ' + total + ' articles'
+                         : total + (total === 1 ? ' article' : ' articles'));
+    }
+    if (empty) empty.hidden = total !== 0;
+    if (showAll) showAll.hidden = !(browsing && total > INITIAL);
+  }
+
+  if (search) search.addEventListener('input', function () { expanded = false; apply(); });
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var group = chip.dataset.group;
+      chips.filter(function (c) { return c.dataset.group === group; })
+           .forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      filters[group] = chip.dataset.value;
+      expanded = false;
+      apply();
+    });
+  });
+
+  if (showAll) {
+    showAll.addEventListener('click', function () { expanded = true; apply(); });
+  }
+
+  // Reflect a deep-linked issue on the chips
+  chips.forEach(function (c) {
+    if (c.dataset.group === 'issue') {
+      c.setAttribute('aria-pressed', String(c.dataset.value === filters.issue));
+    }
+  });
+
+  apply();
+})();
+"""
+
+
+def index_page(issues, articles, by_id):
+    sections = []
+    for a in articles:
+        if a["section"] not in sections:
+            sections.append(a["section"])
+
+    issue_chips = '<button class="chip" data-group="issue" data-value="all" aria-pressed="true">All issues</button>\n            '
+    issue_chips += "\n            ".join(
+        '<button class="chip" data-group="issue" data-value="{}" aria-pressed="false">{}</button>'.format(
+            i["id"], esc(i["date"])) for i in issues)
+
+    section_chips = '<button class="chip" data-group="section" data-value="all" aria-pressed="true">All sections</button>\n            '
+    section_chips += "\n            ".join(
+        '<button class="chip" data-group="section" data-value="{}" aria-pressed="false">{}</button>'.format(
+            attr(s), esc(s)) for s in sections)
+
+    rows = []
+    for a in articles:
+        issue = by_id[a["issue"]]
+        haystack = " ".join([a["title"], a["subtitle"], a["section"], a["keywords"],
+                             issue["date"], issue["volume"],
+                             " ".join(x["name"] for x in a["authors"])]).lower()
+
+        if a.get("draft"):
+            inner = f"""            <p class="index-section">{esc(a['section'])} &middot; pp. {esc(a['pages'])}</p>
+            <h3>{esc(a['title'])}</h3>
+            <p class="index-sub">{esc(a['subtitle'])}</p>
+            <p class="index-issue">{esc(issue['date'])} &middot; {esc(issue['volume'])}</p>
+            <p class="draft-note">Opens the PDF. Summary page coming soon.</p>"""
+            href = pdf_link(a, issue)
+        else:
+            inner = f"""            <p class="index-section">{esc(a['section'])} &middot; pp. {esc(a['pages'])}</p>
             <h3>{esc(a['title'])}</h3>
             <p class="index-sub">{esc(a['subtitle'])}</p>
             <p class="index-authors">{esc(author_line(a['authors']))}</p>
+            <p class="index-issue">{esc(issue['date'])} &middot; {esc(issue['volume'])}</p>"""
+            href = a["slug"] + ".html"
+
+        rows.append(f"""        <li class="index-row" data-issue="{attr(a['issue'])}" data-section="{attr(a['section'])}" data-search="{attr(haystack)}">
+          <a href="{href}">
+{inner}
           </a>
-        </li>""" for a in arts)
+        </li>""")
 
-        blocks.append(f"""    <section class="section{' section-tint' if issue is issues[1] else ''}">
-      <div class="container">
-        <p class="kicker">{esc(issue['date'])} &middot; {esc(issue['volume'])}</p>
-        <h2 class="section-title">{esc(issue['theme'])}</h2>
-        <p class="issue-card-theme" style="margin-top:1rem">{esc(issue['sdg'])}</p>
-        <ul class="index-list">
-{rows}
-        </ul>
-        <div class="btn-row">
-          <a class="btn btn-blue btn-sm" href="../issues/{issue['pdf']}">Read the whole issue (PDF)</a>
-        </div>
-      </div>
-    </section>""")
-
-    body = "\n\n".join(blocks)
+    rows_html = "\n".join(rows)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -278,14 +382,14 @@ def index_page(issues, by_issue):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Articles &middot; vISIon: The ISI Magazine</title>
-<meta name="description" content="Every article published in vISIon, the magazine of the International Statistical Institute, with summaries and direct links into each issue.">
+<meta name="description" content="Search every article published in vISIon, the magazine of the International Statistical Institute.">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 {FONTS}
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-{header('articles', ISSUE_LATEST_PDF)}
+{header('articles')}
 
 <main>
 
@@ -293,44 +397,87 @@ def index_page(issues, by_issue):
     <div class="container">
       <p class="kicker" style="color:#28CBFF">Index</p>
       <h1>Articles</h1>
-      <p>Every piece vISIon has published, with a summary of each and a link straight to its opening page.</p>
+      <p>Search by title, author, section or subject. Every article links to its summary, and from there into the issue.</p>
     </div>
   </section>
 
-{body}
+  <section class="section">
+    <div class="container">
+
+      <div class="filters">
+        <div class="search-field">
+          <label for="article-search">Search</label>
+          <input type="search" id="article-search" placeholder="wildfires, Auerbach, R package, literacy&hellip;" autocomplete="off">
+        </div>
+        <div>
+          <span class="chip-group-label" id="issue-label">Issue</span>
+          <div class="chip-group" role="group" aria-labelledby="issue-label">
+            {issue_chips}
+          </div>
+        </div>
+        <div>
+          <span class="chip-group-label" id="section-label">Section</span>
+          <div class="chip-group" role="group" aria-labelledby="section-label">
+            {section_chips}
+          </div>
+        </div>
+      </div>
+
+      <p class="result-count" id="result-count" aria-live="polite">Latest articles</p>
+
+      <ul class="index-list">
+{rows_html}
+      </ul>
+
+      <p class="no-results" id="no-results" hidden>Nothing matches that search. Try an author's surname, or clear the filters.</p>
+
+      <div class="btn-row show-all">
+        <button class="btn btn-outline-blue" id="show-all" type="button" hidden>Show all articles</button>
+      </div>
+
+    </div>
+  </section>
 
 </main>
 
-{FOOTER}"""
+{FOOTER.replace('<script src="../js/main.js"></script>', '<script src="../js/main.js"></script>\n<script>' + INDEX_JS + '</script>')}"""
 
 
 def main():
-    global ISSUE_LATEST_PDF
+    global LATEST_PDF
 
     data = json.loads(DATA.read_text(encoding="utf-8"))
     issues = data["issues"]
-    ISSUE_LATEST_PDF = issues[0]["pdf"]
-
+    LATEST_PDF = issues[0]["pdf"]
     by_id = {i["id"]: i for i in issues}
-    by_issue = {i["id"]: [] for i in issues}
-    for art in data["articles"]:
-        by_issue[art["issue"]].append(art)
+
+    order = {i["id"]: n for n, i in enumerate(issues)}
+    articles = sorted(data["articles"], key=lambda a: (order[a["issue"]], a["start_page"]))
 
     OUT.mkdir(exist_ok=True)
-    written = 0
+    built, skipped = 0, []
 
-    for issue_id, arts in by_issue.items():
-        for n, art in enumerate(arts):
-            prev_art = arts[n - 1] if n > 0 else None
-            next_art = arts[n + 1] if n < len(arts) - 1 else None
-            page = article_page(art, by_id[issue_id], prev_art, next_art)
+    for issue in issues:
+        live = [a for a in articles if a["issue"] == issue["id"] and not a.get("draft")]
+        for n, art in enumerate(live):
+            for field in ("summary", "points", "authors"):
+                if not art.get(field):
+                    print(f"  ! {art['slug']}: '{field}' is empty. Fill it in, or set \"draft\": true.")
+                    return 1
+            page = article_page(art, issue, live[n - 1] if n else None,
+                                live[n + 1] if n < len(live) - 1 else None)
             (OUT / f"{art['slug']}.html").write_text(page, encoding="utf-8")
-            written += 1
+            built += 1
 
-    (OUT / "index.html").write_text(index_page(issues, by_issue), encoding="utf-8")
-    written += 1
+    skipped = [a["slug"] for a in articles if a.get("draft")]
 
-    print(f"Wrote {written} files to {OUT.relative_to(ROOT)}/")
+    (OUT / "index.html").write_text(index_page(issues, articles, by_id), encoding="utf-8")
+
+    print(f"Built {built} article pages, plus the index.")
+    if skipped:
+        print("Drafts, listed on the index but with no page yet:")
+        for s in skipped:
+            print(f"  - {s}")
     return 0
 
 

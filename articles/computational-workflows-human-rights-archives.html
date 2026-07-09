@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building computational workflows for human rights archives &middot; vISIon: The ISI Magazine</title>
+<meta name="description" content="Software built for human rights archives faces a design paradox that is rarely discussed in the literature: the data that drives its development cannot be made public. Drawing on two ongoing academic projects, Memorias in Uruguay and NuestraMemorIA in Chile, the authors describe a two-layer…">
+<meta name="keywords" content="human rights archives, transitional justice, OCR, named entity recognition, knowledge graphs, retrieval-augmented generation, data sensitivity, Uruguay, Chile">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<meta property="og:title" content="Building computational workflows for human rights archives">
+<meta property="og:description" content="Software built for human rights archives faces a design paradox that is rarely discussed in the literature: the data that drives its development cannot be made public. Drawing on two ongoing academic projects, Memorias in Uruguay and NuestraMemorIA in Chile, the authors describe a two-layer…">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Building computational workflows for human rights archives", "alternativeHeadline": "Design decisions under data sensitivity constraints", "author": [{"@type": "Person", "name": "Elina Gómez", "affiliation": "Instituto de Investigación en Justicia Social y Desigualdades, Universidad de la República"}, {"@type": "Person", "name": "Lorena Etcheverry", "affiliation": "Instituto de Computación, Facultad de Ingeniería, Universidad de la República"}, {"@type": "Person", "name": "Jocelyn Dunstan", "affiliation": "Pontificia Universidad Católica de Chile"}], "isPartOf": {"@type": "PublicationIssue", "issueNumber": "Vol. 1 No. 2", "isPartOf": {"@type": "Periodical", "name": "vISIon: The ISI Magazine"}}, "publisher": {"@type": "Organization", "name": "International Statistical Institute"}, "abstract": "Software built for human rights archives faces a design paradox that is rarely discussed in the literature: the data that drives its development cannot be made public. Drawing on two ongoing academic projects, Memorias in Uruguay and NuestraMemorIA in Chile, the authors describe a two-layer architecture for applying natural language processing to declassified military and government archives from the Southern Cone dictatorships of the 1970s, and set out the methodological decisions that data sensitivity imposes at every step.", "keywords": "human rights archives, transitional justice, OCR, named entity recognition, knowledge graphs, retrieval-augmented generation, data sensitivity, Uruguay, Chile", "pagination": "30–34"}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../assets/logo.png" alt="International Statistical Institute">
+      <span class="brand-name">vISIon</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../issues.html">Issues</a>
+      <a href="index.html" aria-current="page">Articles</a>
+      <a href="../board.html">Editorial board</a>
+      <a href="../submit.html">Submit</a>
+      <a href="../about.html">About</a>
+      <a class="btn btn-orange btn-sm nav-cta" href="../issues/vISIon-Vol1-No2-Jun-2026.pdf">Read the latest issue</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <article>
+
+    <header class="page-hero">
+      <div class="container">
+        <p class="kicker" style="color:#28CBFF">Software &middot; June 2026 &middot; Vol. 1 No. 2</p>
+        <h1>Building computational workflows for human rights archives</h1>
+        <p>Design decisions under data sensitivity constraints</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container prose">
+
+        <p class="kicker">Authors</p>
+        <div class="authors">
+        <div class="author"><p class="name">Elina Gómez</p><p class="affil">Instituto de Investigación en Justicia Social y Desigualdades, Universidad de la República</p></div>
+        <div class="author"><p class="name">Lorena Etcheverry</p><p class="affil">Instituto de Computación, Facultad de Ingeniería, Universidad de la República</p></div>
+        <div class="author"><p class="name">Jocelyn Dunstan</p><p class="affil">Pontificia Universidad Católica de Chile</p></div>
+        </div>
+
+        <h2>In brief</h2>
+        <p class="lead-serif">Software built for human rights archives faces a design paradox that is rarely discussed in the literature: the data that drives its development cannot be made public. Drawing on two ongoing academic projects, Memorias in Uruguay and NuestraMemorIA in Chile, the authors describe a two-layer architecture for applying natural language processing to declassified military and government archives from the Southern Cone dictatorships of the 1970s, and set out the methodological decisions that data sensitivity imposes at every step.</p>
+
+        <blockquote class="pull" style="color:var(--isi-blue); border-color:var(--isi-orange)">&ldquo;At every step, decisions on access, storage, and inference become ethical choices.&rdquo;</blockquote>
+
+        <h2>What the article covers</h2>
+        <ul class="highlights">
+        <li>Layer one, document recovery: optical character recognition on mimeographed, hand-annotated and badly degraded pages, followed by named entity recognition and information extraction.</li>
+        <li>Local inference as a legal and ethical requirement rather than a cost decision, and sovereign retrieval as the principle that governs every infrastructure choice that follows from it.</li>
+        <li>Layer two, search and aggregate analysis: LUZ and Amalia in the Uruguayan project, a knowledge-graph chatbot grounded in explicit graph evidence in the Chilean one.</li>
+        <li>The evaluation problem when neither documents nor annotations can be released: synthetic corpora, public subsets read as upper bounds, and validation by historians and archivists in the loop.</li>
+        <li>A worked example, from a keyword search through table extraction on a detention list to a partial detention trajectory recovered by record linkage.</li>
+        <li>Sensitivity treated as a spectrum rather than a binary, with access control at document level and not at collection level.</li>
+        </ul>
+
+        <div class="read-box">
+          <div>
+            <p class="kicker" style="margin-bottom:.3rem">Read the article</p>
+            <p style="margin:0">Pages 30–34 of Vol. 1 No. 2, June 2026. Free to read, no registration.</p>
+          </div>
+          <a class="btn btn-orange" href="../issues/vISIon-Vol1-No2-Jun-2026.pdf#page=32">Open at page 30</a>
+        </div>
+
+        <h2>How to cite</h2>
+        <p class="note">Elina Gómez, Lorena Etcheverry and Jocelyn Dunstan. “Building computational workflows for human rights archives.” vISIon: The ISI Magazine Vol. 1 No. 2, June 2026, pp. 30–34.</p>
+
+      </div>
+    </section>
+
+    <nav class="section section-tint" aria-label="More from this issue">
+      <div class="container prose">
+        <div class="pager">
+          <a class="pager-link prev" href="interview-tony-labillois.html"><span>Previous in this issue</span><strong>An interview with Tony Labillois</strong></a>
+          <a class="pager-link next" href="beneath-the-surface.html"><span>Next in this issue</span><strong>Beneath the surface</strong></a>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-outline-blue btn-sm" href="index.html">All articles</a>
+          <a class="btn btn-outline-blue btn-sm" href="../issues.html">All issues</a>
+        </div>
+      </div>
+    </nav>
+
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-wordmark">vISIon</p>
+        <p class="footer-tag">Statistical Science for a Better World</p>
+        <p class="footer-text">The magazine of the International Statistical Institute. Published twice a year, free to read.</p>
+      </div>
+      <div>
+        <h4>Magazine</h4>
+        <a href="../issues.html">Issues</a>
+        <a href="index.html">Articles</a>
+        <a href="../board.html">Editorial board</a>
+        <a href="../submit.html">Submit an article</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div>
+        <h4>The ISI</h4>
+        <a href="https://isi-web.org">isi-web.org</a>
+        <a href="https://isi-portal.odoo.com/become-a-member">Become a member</a>
+        <a href="https://www.isi-next.org/conferences/isi-wsc2027/">World Statistics Congress 2027</a>
+        <a href="mailto:manuele.leonelli@ie.edu">Contact the editor</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span data-year>2026</span> International Statistical Institute. All rights reserved. vISIon is not a peer-reviewed journal.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

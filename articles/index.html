@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Articles &middot; vISIon: The ISI Magazine</title>
-<meta name="description" content="Every article published in vISIon, the magazine of the International Statistical Institute, with summaries and direct links into each issue.">
+<meta name="description" content="Search every article published in vISIon, the magazine of the International Statistical Institute.">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,147 +40,197 @@
     <div class="container">
       <p class="kicker" style="color:#28CBFF">Index</p>
       <h1>Articles</h1>
-      <p>Every piece vISIon has published, with a summary of each and a link straight to its opening page.</p>
+      <p>Search by title, author, section or subject. Every article links to its summary, and from there into the issue.</p>
     </div>
   </section>
 
-    <section class="section">
-      <div class="container">
-        <p class="kicker">June 2026 &middot; Vol. 1 No. 2</p>
-        <h2 class="section-title">Data for a fairer world</h2>
-        <p class="issue-card-theme" style="margin-top:1rem">SDG 10: Reduced Inequalities</p>
-        <ul class="index-list">
-        <li class="index-row">
+  <section class="section">
+    <div class="container">
+
+      <div class="filters">
+        <div class="search-field">
+          <label for="article-search">Search</label>
+          <input type="search" id="article-search" placeholder="wildfires, Auerbach, R package, literacy&hellip;" autocomplete="off">
+        </div>
+        <div>
+          <span class="chip-group-label" id="issue-label">Issue</span>
+          <div class="chip-group" role="group" aria-labelledby="issue-label">
+            <button class="chip" data-group="issue" data-value="all" aria-pressed="true">All issues</button>
+            <button class="chip" data-group="issue" data-value="vol1-no2" aria-pressed="false">June 2026</button>
+            <button class="chip" data-group="issue" data-value="vol1-no1" aria-pressed="false">October 2025</button>
+          </div>
+        </div>
+        <div>
+          <span class="chip-group-label" id="section-label">Section</span>
+          <div class="chip-group" role="group" aria-labelledby="section-label">
+            <button class="chip" data-group="section" data-value="all" aria-pressed="true">All sections</button>
+            <button class="chip" data-group="section" data-value="Featured article" aria-pressed="false">Featured article</button>
+            <button class="chip" data-group="section" data-value="Teaching" aria-pressed="false">Teaching</button>
+            <button class="chip" data-group="section" data-value="Official statistics" aria-pressed="false">Official statistics</button>
+            <button class="chip" data-group="section" data-value="Interview" aria-pressed="false">Interview</button>
+            <button class="chip" data-group="section" data-value="Software" aria-pressed="false">Software</button>
+            <button class="chip" data-group="section" data-value="Country spotlight" aria-pressed="false">Country spotlight</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="result-count" id="result-count" aria-live="polite">Latest articles</p>
+
+      <ul class="index-list">
+        <li class="index-row" data-issue="vol1-no2" data-section="Featured article" data-search="ai against modern slavery (aims) building an open foundation for assessing corporate accountability at scale featured article modern slavery, natural language processing, corporate accountability, sdg 8.7, explainable ai june 2026 vol. 1 no. 2 adriana eufrosina bora">
           <a href="ai-against-modern-slavery.html">
-            <p class="index-section">Featured article &middot; pp. 2–7</p>
+            <p class="index-section">Featured article &middot; pp. 3–8</p>
             <h3>AI against modern slavery (AIMS)</h3>
             <p class="index-sub">Building an open foundation for assessing corporate accountability at scale</p>
             <p class="index-authors">Adriana Eufrosina Bora</p>
+            <p class="index-issue">June 2026 &middot; Vol. 1 No. 2</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no2" data-section="Featured article" data-search="beyond the data how community-engaged statistics and data science transforms research on social issues featured article community-engaged research, participatory statistics, data science education, social justice june 2026 vol. 1 no. 2 claire kelling laurie baker paige bilich carrie diaz eaton tyler george morgan kinney jenny mercado mary parker emma pederson angie reed emily robinson anamika sen emily seru carrie slagle kai zhang">
           <a href="beyond-the-data.html">
-            <p class="index-section">Featured article &middot; pp. 8–12</p>
+            <p class="index-section">Featured article &middot; pp. 9–13</p>
             <h3>Beyond the data</h3>
             <p class="index-sub">How community-engaged statistics and data science transforms research on social issues</p>
             <p class="index-authors">Claire Kelling and 14 others</p>
+            <p class="index-issue">June 2026 &middot; Vol. 1 No. 2</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no2" data-section="Featured article" data-search="using secondary data to engage learners in researching social issues the case of the cr2 climate explorer and water scarcity featured article statistics education, secondary data, water scarcity, drought, gaise ii, chile june 2026 vol. 1 no. 2 francisca ubilla valentina giaconi raúl valenzuela felipe ruz">
           <a href="secondary-data-water-scarcity.html">
-            <p class="index-section">Featured article &middot; pp. 13–17</p>
+            <p class="index-section">Featured article &middot; pp. 14–18</p>
             <h3>Using secondary data to engage learners in researching social issues</h3>
             <p class="index-sub">The case of the CR2 Climate Explorer and water scarcity</p>
             <p class="index-authors">Francisca Ubilla, Valentina Giaconi, Raúl Valenzuela and Felipe Ruz</p>
+            <p class="index-issue">June 2026 &middot; Vol. 1 No. 2</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no2" data-section="Teaching" data-search="the international statistical literacy project putting the focus on statistical literacy teaching statistical literacy, islp, iase, statistics education, poster competition june 2026 vol. 1 no. 2 reija helenius elisa falck">
           <a href="international-statistical-literacy-project.html">
-            <p class="index-section">Teaching &middot; pp. 18–21</p>
+            <p class="index-section">Teaching &middot; pp. 19–22</p>
             <h3>The International Statistical Literacy Project</h3>
             <p class="index-sub">Putting the focus on statistical literacy</p>
             <p class="index-authors">Reija Helenius and Elisa Falck</p>
+            <p class="index-issue">June 2026 &middot; Vol. 1 No. 2</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no2" data-section="Official statistics" data-search="why some countries measure race, and others refuse on classification, mismeasurement and the limits of what should be counted official statistics official statistics, race, ethnicity, census, classification, scientific racism june 2026 vol. 1 no. 2 jonathan auerbach">
           <a href="why-countries-measure-race.html">
-            <p class="index-section">Official statistics &middot; pp. 22–24</p>
+            <p class="index-section">Official statistics &middot; pp. 23–25</p>
             <h3>Why some countries measure race, and others refuse</h3>
             <p class="index-sub">On classification, mismeasurement and the limits of what should be counted</p>
             <p class="index-authors">Jonathan Auerbach</p>
+            <p class="index-issue">June 2026 &middot; Vol. 1 No. 2</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no2" data-section="Interview" data-search="an interview with tony labillois on official statistics, accessibility, and the responsibility of data interview official statistics, accessibility, disability, statistics canada, disaggregated data june 2026 vol. 1 no. 2 tony labillois interviewed by manuele leonelli">
           <a href="interview-tony-labillois.html">
-            <p class="index-section">Interview &middot; pp. 25–28</p>
+            <p class="index-section">Interview &middot; pp. 26–29</p>
             <h3>An interview with Tony Labillois</h3>
             <p class="index-sub">On official statistics, accessibility, and the responsibility of data</p>
             <p class="index-authors">Tony Labillois and Interviewed by Manuele Leonelli</p>
+            <p class="index-issue">June 2026 &middot; Vol. 1 No. 2</p>
           </a>
         </li>
-        </ul>
-        <div class="btn-row">
-          <a class="btn btn-blue btn-sm" href="../issues/vISIon-Vol1-No2-Jun-2026.pdf">Read the whole issue (PDF)</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-tint">
-      <div class="container">
-        <p class="kicker">October 2025 &middot; Vol. 1 No. 1</p>
-        <h2 class="section-title">The inaugural issue</h2>
-        <p class="issue-card-theme" style="margin-top:1rem">SDG 13: Climate Action</p>
-        <ul class="index-list">
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no2" data-section="Software" data-search="building computational workflows for human rights archives design decisions under data sensitivity constraints software human rights archives, transitional justice, ocr, named entity recognition, knowledge graphs, retrieval-augmented generation, data sensitivity, uruguay, chile june 2026 vol. 1 no. 2 elina gómez lorena etcheverry jocelyn dunstan">
+          <a href="computational-workflows-human-rights-archives.html">
+            <p class="index-section">Software &middot; pp. 30–34</p>
+            <h3>Building computational workflows for human rights archives</h3>
+            <p class="index-sub">Design decisions under data sensitivity constraints</p>
+            <p class="index-authors">Elina Gómez, Lorena Etcheverry and Jocelyn Dunstan</p>
+            <p class="index-issue">June 2026 &middot; Vol. 1 No. 2</p>
+          </a>
+        </li>
+        <li class="index-row" data-issue="vol1-no2" data-section="Country spotlight" data-search="beneath the surface what data reveal about climate pressure on indonesian fisheries country spotlight indonesia, fisheries, climate change, official statistics, geospatial data, remote sensing, vulnerability, coastal livelihoods june 2026 vol. 1 no. 2 suryo adi rakhmawan i nyoman setiawan">
+          <a href="beneath-the-surface.html">
+            <p class="index-section">Country spotlight &middot; pp. 35–37</p>
+            <h3>Beneath the surface</h3>
+            <p class="index-sub">What data reveal about climate pressure on Indonesian fisheries</p>
+            <p class="index-authors">Suryo Adi Rakhmawan and I Nyoman Setiawan</p>
+            <p class="index-issue">June 2026 &middot; Vol. 1 No. 2</p>
+          </a>
+        </li>
+        <li class="index-row" data-issue="vol1-no1" data-section="Featured article" data-search="beyond the smoke what statistics reveal about brazilian wildfires featured article wildfires, brazil, remote sensing, sdg 13, spatio-temporal statistics october 2025 vol. 1 no. 1 jonatha pimentel rodrigo bulhões paulo canas rodrigues">
           <a href="beyond-the-smoke.html">
             <p class="index-section">Featured article &middot; pp. 3–6</p>
             <h3>Beyond the smoke</h3>
             <p class="index-sub">What statistics reveal about Brazilian wildfires</p>
             <p class="index-authors">Jonatha Pimentel, Rodrigo Bulhões and Paulo Canas Rodrigues</p>
+            <p class="index-issue">October 2025 &middot; Vol. 1 No. 1</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no1" data-section="Featured article" data-search="from metrics to meaning environmetrics and the sustainable development goals featured article environmetrics, ties, sustainable development goals, climate change, ai october 2025 vol. 1 no. 1 nathaniel k. newlands marco costa stefano castruccio">
           <a href="from-metrics-to-meaning.html">
             <p class="index-section">Featured article &middot; pp. 7–10</p>
             <h3>From metrics to meaning</h3>
             <p class="index-sub">Environmetrics and the Sustainable Development Goals</p>
             <p class="index-authors">Nathaniel K. Newlands, Marco Costa and Stefano Castruccio</p>
+            <p class="index-issue">October 2025 &middot; Vol. 1 No. 1</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no1" data-section="Featured article" data-search="statistical analysis of record-breaking temperatures is there evidence of climate change? featured article extreme value statistics, record-breaking events, climate change, hypothesis testing, spain october 2025 vol. 1 no. 1 ana c. cebrián">
           <a href="record-breaking-temperatures.html">
             <p class="index-section">Featured article &middot; pp. 11–14</p>
             <h3>Statistical analysis of record-breaking temperatures</h3>
             <p class="index-sub">Is there evidence of climate change?</p>
             <p class="index-authors">Ana C. Cebrián</p>
+            <p class="index-issue">October 2025 &middot; Vol. 1 No. 1</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no1" data-section="Teaching" data-search="have humans caused the current climate crisis? investigating co₂ data throughout the earth&#x27;s history teaching climate change, co2, statistics education, codap, civic statistical literacy october 2025 vol. 1 no. 1 joachim engel laura martignon">
           <a href="co2-and-the-climate-crisis.html">
             <p class="index-section">Teaching &middot; pp. 15–18</p>
             <h3>Have humans caused the current climate crisis?</h3>
             <p class="index-sub">Investigating CO₂ data throughout the Earth's history</p>
             <p class="index-authors">Joachim Engel and Laura Martignon</p>
+            <p class="index-issue">October 2025 &middot; Vol. 1 No. 1</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no1" data-section="Software" data-search="metr: analysis and visualisation of meteorological fields bringing atmospheric science into the tidy r workflow software r, r package, metr, ggplot2, meteorology, netcdf, visualisation october 2025 vol. 1 no. 1 elio campitelli">
           <a href="metr-r-package.html">
             <p class="index-section">Software &middot; pp. 19–20</p>
             <h3>metR: analysis and visualisation of meteorological fields</h3>
             <p class="index-sub">Bringing atmospheric science into the tidy R workflow</p>
             <p class="index-authors">Elio Campitelli</p>
+            <p class="index-issue">October 2025 &middot; Vol. 1 No. 1</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no1" data-section="Software" data-search="using the spichanges r package at the heart of the amazon rainforest reading the standardized precipitation index under a changing climate software r, spichanges, drought, standardized precipitation index, non-stationarity, amazon october 2025 vol. 1 no. 1 gabriel constantino blain adam h. sparks graciela da rocha sobierajski letícia lopes martins">
           <a href="spichanges-r-package.html">
             <p class="index-section">Software &middot; pp. 21–22</p>
             <h3>Using the SPIChanges R package at the heart of the Amazon rainforest</h3>
             <p class="index-sub">Reading the Standardized Precipitation Index under a changing climate</p>
             <p class="index-authors">Gabriel Constantino Blain, Adam H. Sparks, Graciela da Rocha Sobierajski and Letícia Lopes Martins</p>
+            <p class="index-issue">October 2025 &middot; Vol. 1 No. 1</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no1" data-section="Official statistics" data-search="the overlooked science of understanding the world: demography what population data can explain that other tools cannot official statistics demography, census, official statistics, population, migration october 2025 vol. 1 no. 1 luca di gennaro splendore">
           <a href="demography.html">
             <p class="index-section">Official statistics &middot; pp. 23–24</p>
             <h3>The overlooked science of understanding the world: demography</h3>
             <p class="index-sub">What population data can explain that other tools cannot</p>
             <p class="index-authors">Luca Di Gennaro Splendore</p>
+            <p class="index-issue">October 2025 &middot; Vol. 1 No. 1</p>
           </a>
         </li>
-        <li class="index-row">
+        <li class="index-row" data-issue="vol1-no1" data-section="Country spotlight" data-search="philippines mapping optimism in the pearl of the orient seas country spotlight philippines, survey statistics, optimism index, spatial autocorrelation, moran&#x27;s i october 2025 vol. 1 no. 1 leonard allan f. almero marie joy l. relente mara sherlin dp. talento">
           <a href="philippines-optimism.html">
             <p class="index-section">Country spotlight &middot; pp. 25–27</p>
             <h3>Philippines</h3>
             <p class="index-sub">Mapping optimism in the pearl of the orient seas</p>
             <p class="index-authors">Leonard Allan F. Almero, Marie Joy L. Relente and Mara Sherlin DP. Talento</p>
+            <p class="index-issue">October 2025 &middot; Vol. 1 No. 1</p>
           </a>
         </li>
-        </ul>
-        <div class="btn-row">
-          <a class="btn btn-blue btn-sm" href="../issues/vISIon-Vol1-No1-Oct-2025.pdf">Read the whole issue (PDF)</a>
-        </div>
+      </ul>
+
+      <p class="no-results" id="no-results" hidden>Nothing matches that search. Try an author's surname, or clear the filters.</p>
+
+      <div class="btn-row show-all">
+        <button class="btn btn-outline-blue" id="show-all" type="button" hidden>Show all articles</button>
       </div>
-    </section>
+
+    </div>
+  </section>
 
 </main>
 
@@ -215,5 +265,81 @@
 </footer>
 
 <script src="../js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+  var search  = document.getElementById('article-search');
+  var rows    = Array.prototype.slice.call(document.querySelectorAll('.index-row'));
+  var chips   = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var count   = document.getElementById('result-count');
+  var empty   = document.getElementById('no-results');
+  var showAll = document.getElementById('show-all');
+  var INITIAL = 6;
+  var expanded = false;
+
+  var filters = { issue: 'all', section: 'all' };
+
+  // Deep link from the issues page, e.g. articles/index.html?issue=vol1-no2
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('issue')) { filters.issue = params.get('issue'); }
+  if (params.get('q') && search) { search.value = params.get('q'); }
+
+  function matches(row, needle) {
+    if (filters.issue !== 'all' && row.dataset.issue !== filters.issue) return false;
+    if (filters.section !== 'all' && row.dataset.section !== filters.section) return false;
+    if (!needle) return true;
+    return row.dataset.search.indexOf(needle) !== -1;
+  }
+
+  function apply() {
+    var needle = (search ? search.value : '').trim().toLowerCase();
+    var browsing = !needle && filters.issue === 'all' && filters.section === 'all' && !expanded;
+    var shown = 0, total = 0;
+
+    rows.forEach(function (row) {
+      var hit = matches(row, needle);
+      if (hit) total++;
+      var visible = hit && (!browsing || total <= INITIAL);
+      row.classList.toggle('is-hidden', !visible);
+      if (visible) shown++;
+    });
+
+    if (count) {
+      count.textContent = total === 0
+        ? 'No articles match.'
+        : (shown < total ? 'Showing ' + shown + ' of ' + total + ' articles'
+                         : total + (total === 1 ? ' article' : ' articles'));
+    }
+    if (empty) empty.hidden = total !== 0;
+    if (showAll) showAll.hidden = !(browsing && total > INITIAL);
+  }
+
+  if (search) search.addEventListener('input', function () { expanded = false; apply(); });
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var group = chip.dataset.group;
+      chips.filter(function (c) { return c.dataset.group === group; })
+           .forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      filters[group] = chip.dataset.value;
+      expanded = false;
+      apply();
+    });
+  });
+
+  if (showAll) {
+    showAll.addEventListener('click', function () { expanded = true; apply(); });
+  }
+
+  // Reflect a deep-linked issue on the chips
+  chips.forEach(function (c) {
+    if (c.dataset.group === 'issue') {
+      c.setAttribute('aria-pressed', String(c.dataset.value === filters.issue));
+    }
+  });
+
+  apply();
+})();
+</script>
 </body>
 </html>
