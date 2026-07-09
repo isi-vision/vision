@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>metR: analysis and visualisation of meteorological fields &middot; vISIon: The ISI Magazine</title>
+<meta name="description" content="Meteorological analysis needs specialised tools, but domain-specific data structures isolate the work from the wider statistical software community. metR bridges that gap, reading meteorological data as tidy data frames and extending ggplot2 with the geoms, stats and scales that atmospheric science…">
+<meta name="keywords" content="R, metR, ggplot2, meteorology, NetCDF, visualisation">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<meta property="og:title" content="metR: analysis and visualisation of meteorological fields">
+<meta property="og:description" content="Meteorological analysis needs specialised tools, but domain-specific data structures isolate the work from the wider statistical software community. metR bridges that gap, reading meteorological data as tidy data frames and extending ggplot2 with the geoms, stats and scales that atmospheric science…">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "metR: analysis and visualisation of meteorological fields", "alternativeHeadline": "Bringing atmospheric science into the tidy R workflow", "author": [{"@type": "Person", "name": "Elio Campitelli", "affiliation": "Monash University and Securing Antarctica's Environmental Future"}], "isPartOf": {"@type": "PublicationIssue", "issueNumber": "Vol. 1 No. 1", "isPartOf": {"@type": "Periodical", "name": "vISIon: The ISI Magazine"}}, "publisher": {"@type": "Organization", "name": "International Statistical Institute"}, "abstract": "Meteorological analysis needs specialised tools, but domain-specific data structures isolate the work from the wider statistical software community. metR bridges that gap, reading meteorological data as tidy data frames and extending ggplot2 with the geoms, stats and scales that atmospheric science actually requires.", "keywords": "R, metR, ggplot2, meteorology, NetCDF, visualisation", "pagination": "19–20"}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../assets/logo.png" alt="International Statistical Institute">
+      <span class="brand-name">vISIon</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../issues.html">Issues</a>
+      <a href="index.html" aria-current="page">Articles</a>
+      <a href="../board.html">Editorial board</a>
+      <a href="../submit.html">Submit</a>
+      <a href="../about.html">About</a>
+      <a class="btn btn-orange btn-sm nav-cta" href="../issues/vISIon-Vol1-No2-Jun-2026.pdf">Read the latest issue</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <article>
+
+    <header class="page-hero">
+      <div class="container">
+        <p class="kicker" style="color:#28CBFF">Software &middot; October 2025 &middot; Vol. 1 No. 1</p>
+        <h1>metR: analysis and visualisation of meteorological fields</h1>
+        <p>Bringing atmospheric science into the tidy R workflow</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container prose">
+
+        <p class="kicker">Author</p>
+        <div class="authors">
+        <div class="author"><p class="name">Elio Campitelli</p><p class="affil">Monash University and Securing Antarctica's Environmental Future</p></div>
+        </div>
+
+        <h2>In brief</h2>
+        <p class="lead-serif">Meteorological analysis needs specialised tools, but domain-specific data structures isolate the work from the wider statistical software community. metR bridges that gap, reading meteorological data as tidy data frames and extending ggplot2 with the geoms, stats and scales that atmospheric science actually requires.</p>
+
+        <blockquote class="pull" style="color:var(--isi-blue); border-color:var(--isi-orange)">&ldquo;The package bridges the gap between domain-specific meteorological tools and the broader R data science ecosystem.&rdquo;</blockquote>
+
+        <h2>What the article covers</h2>
+        <ul class="highlights">
+        <li>ReadNetCDF returns tidy data tables with index-based, value-based and disjoint subsetting.</li>
+        <li>Empirical orthogonal functions, spherical derivatives, geostrophic wind and thermodynamic functions.</li>
+        <li>Contour filling with kriging interpolation, circular boundaries and on-the-fly reprojection; streamlines and arrows for vector fields.</li>
+        <li>A worked example computing the Southern Annular Mode in eighteen lines.</li>
+        </ul>
+
+        <div class="read-box">
+          <div>
+            <p class="kicker" style="margin-bottom:.3rem">Read the article</p>
+            <p style="margin:0">Pages 19–20 of Vol. 1 No. 1, October 2025. Free to read, no registration.</p>
+          </div>
+          <a class="btn btn-orange" href="../issues/vISIon-Vol1-No1-Oct-2025.pdf#page=21">Open at page 19</a>
+        </div>
+
+        <h2>How to cite</h2>
+        <p class="note">Elio Campitelli. “metR: analysis and visualisation of meteorological fields.” vISIon: The ISI Magazine Vol. 1 No. 1, October 2025, pp. 19–20.</p>
+
+      </div>
+    </section>
+
+    <nav class="section section-tint" aria-label="More from this issue">
+      <div class="container prose">
+        <div class="pager">
+          <a class="pager-link prev" href="co2-and-the-climate-crisis.html"><span>Previous in this issue</span><strong>Have humans caused the current climate crisis?</strong></a>
+          <a class="pager-link next" href="spichanges-r-package.html"><span>Next in this issue</span><strong>Using the SPIChanges R package at the heart of the Amazon rainforest</strong></a>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-outline-blue btn-sm" href="index.html">All articles</a>
+          <a class="btn btn-outline-blue btn-sm" href="../issues.html">All issues</a>
+        </div>
+      </div>
+    </nav>
+
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-wordmark">vISIon</p>
+        <p class="footer-tag">Statistical Science for a Better World</p>
+        <p class="footer-text">The magazine of the International Statistical Institute. Published twice a year, free to read.</p>
+      </div>
+      <div>
+        <h4>Magazine</h4>
+        <a href="../issues.html">Issues</a>
+        <a href="index.html">Articles</a>
+        <a href="../board.html">Editorial board</a>
+        <a href="../submit.html">Submit an article</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div>
+        <h4>The ISI</h4>
+        <a href="https://isi-web.org">isi-web.org</a>
+        <a href="https://isi-portal.odoo.com/become-a-member">Become a member</a>
+        <a href="https://www.isi-next.org/conferences/isi-wsc2027/">World Statistics Congress 2027</a>
+        <a href="mailto:manuele.leonelli@ie.edu">Contact the editor</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span data-year>2026</span> International Statistical Institute. All rights reserved. vISIon is not a peer-reviewed journal.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
