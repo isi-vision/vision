@@ -6,20 +6,25 @@
 <title>vISIon: The ISI Magazine</title>
 <meta name="description" content="vISIon is the magazine of the International Statistical Institute: accessible, rigorous writing on pressing societal issues through a data lens. Each issue centres on one UN Sustainable Development Goal.">
 <link rel="icon" href="assets/favicon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/source-sans-3-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <meta property="og:title" content="vISIon: The ISI Magazine">
 <meta property="og:description" content="Statistical Science for a Better World. The magazine of the International Statistical Institute.">
 <meta property="og:type" content="website">
+<!-- Analytics. Cookieless, no consent banner needed. Create a site at
+     goatcounter.com, then uncomment the line below and replace YOURCODE.
+     Per-article reads come free: every article has its own URL.
+     PDF opens are counted as events by js/main.js.
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
 </head>
 <body>
 
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="assets/logo.png" alt="International Statistical Institute">
+      <img class="brand-logo" src="assets/isi-mark.png" alt="International Statistical Institute">
       <span class="brand-name">vISIon</span>
     </a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
@@ -148,6 +153,17 @@
   </section>
 
   <!-- About band -->
+  <!-- Call for pitches: placed before the About band for visibility -->
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <div>
+        <h2>Have an idea for an article?</h2>
+        <p>Pitches, letters and article proposals are welcome from every corner of the ISI community, and from outside it.</p>
+      </div>
+      <a class="btn btn-ghost btn-lg" href="submit.html">Pitch to vISIon</a>
+    </div>
+  </section>
+
   <section class="section section-dark">
     <div class="container narrow">
       <p class="kicker">About the magazine</p>
@@ -159,17 +175,6 @@
         <a class="btn btn-ghost" href="about.html">More about vISIon</a>
         <a class="btn btn-ghost" href="board.html">Meet the editorial board</a>
       </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-band">
-    <div class="container cta-inner">
-      <div>
-        <h2>Have an idea for an article?</h2>
-        <p>Pitches, letters and article proposals are welcome from every corner of the ISI community, and from outside it.</p>
-      </div>
-      <a class="btn btn-ghost btn-lg" href="submit.html">Pitch to vISIon</a>
     </div>
   </section>
 
@@ -190,13 +195,13 @@
         <a href="board.html">Editorial board</a>
         <a href="submit.html">Submit an article</a>
         <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div>
         <h4>The ISI</h4>
-        <a href="https://isi-web.org">isi-web.org</a>
+        <a href="https://isi-web.org">Website</a>
+        <a href="https://isi-web.org/scientific-journals">Journals</a>
         <a href="https://isi-portal.odoo.com/become-a-member">Become a member</a>
-        <a href="https://www.isi-next.org/conferences/isi-wsc2027/">World Statistics Congress 2027</a>
-        <a href="mailto:manuele.leonelli@ie.edu">Contact the editor</a>
       </div>
     </div>
     <div class="container footer-bottom">

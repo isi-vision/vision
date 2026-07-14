@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact &middot; vISIon: The ISI Magazine</title>
+<meta name="description" content="Contact the editors of vISIon, the magazine of the International Statistical Institute.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preload" href="assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/source-sans-3-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<!-- Analytics. Cookieless, no consent banner needed. Create a site at
+     goatcounter.com, then uncomment the line below and replace YOURCODE.
+     Per-article reads come free: every article has its own URL.
+     PDF opens are counted as events by js/main.js.
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/isi-mark.png" alt="International Statistical Institute">
+      <span class="brand-name">vISIon</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="issues.html">Issues</a>
+      <a href="articles/index.html">Articles</a>
+      <a href="board.html">Editorial board</a>
+      <a href="submit.html">Submit</a>
+      <a href="about.html">About</a>
+      <a class="btn btn-orange btn-sm nav-cta" href="issues/vISIon-Vol1-No2-Jun-2026.pdf">Read the latest issue</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="kicker" style="color:#28CBFF">Get in touch</p>
+      <h1>Contact the editors</h1>
+      <p>Pitches, letters, corrections and offers to join the board. We read everything and reply to most things.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+
+      <!-- =======================================================
+           SET THIS ONCE. Replace the placeholder in the action
+           with the endpoint your form provider gives you.
+           Nothing else on this page needs to change.
+           ======================================================= -->
+      <form id="contact-form" class="contact-form"
+            action="https://formspree.io/f/xbdnlovg"
+            method="POST">
+
+        <!-- Spam trap: real people never fill this in. Hidden from
+             sighted users and from screen readers alike. -->
+        <div class="honeypot" aria-hidden="true">
+          <label>Leave this field empty
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </label>
+        </div>
+
+        <div class="field">
+          <label for="cf-name">Your name <span class="req" aria-hidden="true">*</span></label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="cf-email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email">
+          <p class="field-hint">So the editors can reply to you.</p>
+        </div>
+
+        <div class="field">
+          <label for="cf-affil">Affiliation <span class="opt">optional</span></label>
+          <input id="cf-affil" name="affiliation" type="text" autocomplete="organization">
+        </div>
+
+        <div class="field">
+          <label for="cf-topic">What is this about? <span class="req" aria-hidden="true">*</span></label>
+          <select id="cf-topic" name="topic" required>
+            <option value="Pitch an article">Pitch an article</option>
+            <option value="Letter to the editor">Letter to the editor</option>
+            <option value="Correction">A correction to something we published</option>
+            <option value="Join the editorial board">Joining the editorial board</option>
+            <option value="Other">Something else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="cf-message" name="message" rows="9" required
+                    placeholder="If you are pitching, a paragraph on the idea and why it matters is plenty."></textarea>
+        </div>
+
+        <div class="field checkbox-row">
+          <input id="cf-consent" name="consent" type="checkbox" required value="yes">
+          <label for="cf-consent">I agree that my message and my contact details are sent to the editors of vISIon so that they can reply to me. <span class="req" aria-hidden="true">*</span></label>
+        </div>
+
+        <!-- Used by the provider as the notification subject line -->
+        <input type="hidden" name="_subject" id="cf-subject" value="vISIon website enquiry">
+
+        <div class="btn-row">
+          <button class="btn btn-orange btn-lg" type="submit" id="cf-submit">Send message</button>
+        </div>
+
+        <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="note" style="margin-top:2.6rem">
+        <strong>What happens to your message.</strong> It is delivered by email to the Editor-in-Chief and is
+        not published, sold or used for any other purpose. Delivery is handled by a third-party form service,
+        which processes your name, email and message solely in order to pass them on. If you would rather not
+        use this form, write to the editors through the
+        <a href="https://isi-web.org">International Statistical Institute</a>.
+      </p>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-wordmark">vISIon</p>
+        <p class="footer-tag">Statistical Science for a Better World</p>
+        <p class="footer-text">The magazine of the International Statistical Institute. Published twice a year, free to read.</p>
+      </div>
+      <div>
+        <h4>Magazine</h4>
+        <a href="issues.html">Issues</a>
+        <a href="articles/index.html">Articles</a>
+        <a href="board.html">Editorial board</a>
+        <a href="submit.html">Submit an article</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>The ISI</h4>
+        <a href="https://isi-web.org">Website</a>
+        <a href="https://isi-web.org/scientific-journals">Journals</a>
+        <a href="https://isi-portal.odoo.com/become-a-member">Become a member</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span data-year>2026</span> International Statistical Institute. All rights reserved. vISIon is not a peer-reviewed journal.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

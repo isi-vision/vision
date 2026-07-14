@@ -27,10 +27,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "tools" / "articles.json"
 OUT = ROOT / "articles"
 
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
-         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-         '<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,700'
-         '&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">')
+# Fonts are self-hosted and declared in css/style.css, so no third-party
+# request is made and no visitor IP leaves the site.
+FONTS = ('<link rel="preload" href="../assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>\n'
+         '<link rel="preload" href="../assets/fonts/source-sans-3-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>')
 
 LATEST_PDF = ""
 
@@ -58,7 +58,7 @@ def header(current):
     return f"""<header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="../index.html">
-      <img class="brand-logo" src="../assets/logo.png" alt="International Statistical Institute">
+      <img class="brand-logo" src="../assets/isi-mark.png" alt="International Statistical Institute">
       <span class="brand-name">vISIon</span>
     </a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
@@ -87,13 +87,13 @@ FOOTER = """<footer class="site-footer">
         <a href="../board.html">Editorial board</a>
         <a href="../submit.html">Submit an article</a>
         <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
       </div>
       <div>
         <h4>The ISI</h4>
-        <a href="https://isi-web.org">isi-web.org</a>
+        <a href="https://isi-web.org">Website</a>
+        <a href="https://isi-web.org/scientific-journals">Journals</a>
         <a href="https://isi-portal.odoo.com/become-a-member">Become a member</a>
-        <a href="https://www.isi-next.org/conferences/isi-wsc2027/">World Statistics Congress 2027</a>
-        <a href="mailto:manuele.leonelli@ie.edu">Contact the editor</a>
       </div>
     </div>
     <div class="container footer-bottom">
@@ -183,6 +183,12 @@ def article_page(art, issue, prev_art, next_art):
 <meta property="og:description" content="{attr(desc)}">
 <meta property="og:type" content="article">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+<!-- Analytics. Cookieless, no consent banner needed. Create a site at
+     goatcounter.com, then uncomment the line below and replace YOURCODE.
+     Per-article reads come free: every article has its own URL.
+     PDF opens are counted as events by js/main.js.
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
 </head>
 <body>
 
@@ -386,6 +392,12 @@ def index_page(issues, articles, by_id):
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 {FONTS}
 <link rel="stylesheet" href="../css/style.css">
+<!-- Analytics. Cookieless, no consent banner needed. Create a site at
+     goatcounter.com, then uncomment the line below and replace YOURCODE.
+     Per-article reads come free: every article has its own URL.
+     PDF opens are counted as events by js/main.js.
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
 </head>
 <body>
 
