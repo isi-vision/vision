@@ -2,6 +2,25 @@
 (function () {
   'use strict';
 
+  // ====================================================================
+  // ANALYTICS. Set this to your GoatCounter code and analytics turn on
+  // across the whole site. Leave it empty and nothing is loaded at all:
+  // no script, no request, no cookie.
+  //
+  // If your dashboard is at https://isi-vision.goatcounter.com, then the
+  // code is: isi-vision
+  // ====================================================================
+  var GOATCOUNTER_CODE = 'isi-vision';
+
+  if (GOATCOUNTER_CODE) {
+    var gc = document.createElement('script');
+    gc.async = true;
+    gc.src = 'https://gc.zgo.at/count.js';
+    gc.setAttribute('data-goatcounter',
+      'https://' + GOATCOUNTER_CODE + '.goatcounter.com/count');
+    document.head.appendChild(gc);
+  }
+
   // Mobile navigation
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('site-nav');

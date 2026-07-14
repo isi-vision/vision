@@ -183,12 +183,6 @@ def article_page(art, issue, prev_art, next_art):
 <meta property="og:description" content="{attr(desc)}">
 <meta property="og:type" content="article">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
-<!-- Analytics. Cookieless, no consent banner needed. Create a site at
-     goatcounter.com, then uncomment the line below and replace YOURCODE.
-     Per-article reads come free: every article has its own URL.
-     PDF opens are counted as events by js/main.js.
-<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
--->
 </head>
 <body>
 
@@ -392,12 +386,6 @@ def index_page(issues, articles, by_id):
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 {FONTS}
 <link rel="stylesheet" href="../css/style.css">
-<!-- Analytics. Cookieless, no consent banner needed. Create a site at
-     goatcounter.com, then uncomment the line below and replace YOURCODE.
-     Per-article reads come free: every article has its own URL.
-     PDF opens are counted as events by js/main.js.
-<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
--->
 </head>
 <body>
 
