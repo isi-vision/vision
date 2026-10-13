@@ -182,6 +182,9 @@ def article_page(art, issue, prev_art, next_art):
 <meta property="og:title" content="{attr(art['title'])}">
 <meta property="og:description" content="{attr(desc)}">
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="vISIon">
+<meta property="og:url" content="https://isi-vision.github.io/vision/articles/{art['slug']}.html">
+<link rel="canonical" href="https://isi-vision.github.io/vision/articles/{art['slug']}.html">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>
@@ -386,6 +389,9 @@ def index_page(issues, articles, by_id):
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 {FONTS}
 <link rel="stylesheet" href="../css/style.css">
+<meta property="og:site_name" content="vISIon">
+<meta property="og:url" content="https://isi-vision.github.io/vision/articles/">
+<link rel="canonical" href="https://isi-vision.github.io/vision/articles/">
 </head>
 <body>
 
